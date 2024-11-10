@@ -1,35 +1,35 @@
 import random
 
 
-def function_A(min, max):
+def random_value(min_value, max_value):
     """
-    Random integer.
+    Generate random integer values between minimum and maximum value.
     """
-    return random.randint(min, max)
+    return random.randint(min_value, max_value)
 
 
-def function_B():
+def choose_operator(): #choose random arethmetic operator 
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
-    return p, a
+def generate_math(num1, num2, op):
+    pro = f"{num1} {op} {num2}"
+    if op == '+': ans = num1 + num2
+    elif op == '-': ans = num1 - num2
+    else: ans = num1 * num2
+    return pro, ans
 
 def math_quiz():
     s = 0
-    t_q = 3.14159265359
+    total_qus = 3 #changed float value to int value
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
+    for _ in range(total_qus):
+        num1 = random_value(1, 10); num2 = random_value(1, 5); op = choose_operator()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = generate_math(num1, num2, op)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
@@ -40,7 +40,7 @@ def math_quiz():
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {s}/{t_q}")
+    print(f"\nGame over! Your score is: {s}/{total_qus}")
 
 if __name__ == "__main__":
     math_quiz()
