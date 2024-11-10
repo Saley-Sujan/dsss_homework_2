@@ -4,7 +4,7 @@ setup(
     name="math-quiz",
     version="1.0",
     packages=find_packages(),
-    install_requires=[],  # Add dependencies here if needed
+    install_requires=[],
     author="Saley-Sujan",
     author_email="saleysujan96@gmail.com",
     description="A simple math quiz game with random questions.",
