@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='math_quiz',  # Replace with your package name
+    name='math-quiz',
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
